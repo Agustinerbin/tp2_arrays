@@ -44,9 +44,9 @@ public class Main {
 //                case 5:
 //                    ejercicio5();
 //                    break;
-//                case 6:
-//                    ejercicio6();
-//                    break;
+                case 6:
+                    ejercicio6();
+                    break;
 //                case 7:
 //                    ejercicio7();
 //                    break;
@@ -88,9 +88,10 @@ public class Main {
     }
 
     public static void ejercicio6() {
-     int array[] =()
-             for (int i = 0; )
-     System.out.println(array);
+        int array[] = new int[50];
+        for (int i = 0; i < array.length; i++) {
+            array[i] =(int) (Math.random() * 1000);
+            System.out.println(array[i]);
+        }
     }
-
 }
