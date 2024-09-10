@@ -56,9 +56,9 @@ public class Main {
 //                case 9:
 //                    ejercicio9();
 //                    break;
-//                case 10:
-//                    ejercicio10();
-//                    break;
+                case 10:
+                    ejercicio10(scanner);
+                    break;
 //                case 11:
 //                    ejercicio11();
 //                    break;
@@ -93,5 +93,31 @@ public class Main {
             array[i] =(int) (Math.random() * 1000);
             System.out.println(array[i]);
         }
+    }
+    private static final char[] letras = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
+
+    public static void ejercicio10(Scanner scanner) {
+        System.out.println("Ingrese el numero del dni: ");
+       int numero_dni = scanner.nextInt();
+
+       if (numero_dni < 0) {
+           System.out.println("El numero del dni no puede ser negativo.");
+           return;
+       }
+
+       if (numero_dni > 99999999) {
+           System.out.println("Número de DNI inválido. Debe tener como máximo 8 dígitos.");
+           return;
+       }
+
+       char letra = optenerLetra(numero_dni);
+       System.out.println("El DNI completo es: "+ numero_dni + letra);
+
+    }
+    public static char optenerLetra(int numero_dni) {
+        int resto = numero_dni % 23;
+
+        return letras[resto];
+
     }
 }
