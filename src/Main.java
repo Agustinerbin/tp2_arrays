@@ -1,5 +1,3 @@
-
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,7 +10,7 @@ public class Main {
             System.out.println("Seleccione el ejercicio que desea ejecutar");
             System.out.println("1.");
             System.out.println("2.Mostrar el array por pantalla(for)");
-            System.out.println("3.");
+            System.out.println("3.Mostrar numero y sus multiplos");
             System.out.println("4.");
             System.out.println("5.");
             System.out.println("6.Generar un array con numeros aleatorios y mostrarlo(for)");
@@ -35,9 +33,9 @@ public class Main {
                 case 2:
                     ejercicio2();
                     break;
-//              case 3:
-//                  ejercicio3;
-//                    break;
+                case 3:
+                    ejercicio3(scanner);
+                    break;
 //                case 4:
 //                    ejercicio4();
 //                    break;
@@ -47,9 +45,9 @@ public class Main {
                 case 6:
                     ejercicio6();
                     break;
-//                case 7:
-//                    ejercicio7();
-//                    break;
+                case 7:
+                    ejercicio7(scanner);
+                    break;
 //                case 8:
 //                    ejercicio8();
 //                    break;
@@ -120,4 +118,56 @@ public class Main {
         return letras[resto];
 
     }
+    public static void ejercicio3(Scanner scanner) {
+        System.out.print("Dime la dimension del areglo : ");
+        int dimension = scanner.nextInt();
+
+        System.out.print("Dime el número del cual quieres los múltiplos: ");
+        int multiplo = scanner.nextInt();
+
+        // Llenar el array con múltiplos
+        int[] array = llenarArray(dimension, multiplo);
+
+        // Mostrar el contenido del array
+        System.out.println("El array con los múltiplos es:");
+        mostrarArray(array);
+    }
+    public static int[] llenarArray(int dimension, int multiplo) {
+        int[] array = new int[dimension];
+        for (int i = 0; i < dimension; i++) {
+            array[i] = multiplo * (i + 1); 
+        }
+        return array;
+    }
+
+    // Función para mostrar el contenido del array
+    public static void mostrarArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
+
+    public static void ejercicio7(Scanner scanner) {
+        int array[] = new int[20];
+        int numeroPar=0;
+        int numeroImpar=0;
+        System.out.println("Ingrese 20 numeros aleatorios: ");
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+            if (array[i] % 2 == 0){
+                numeroPar=numeroPar+array[i];}
+            else{
+                numeroImpar+=array[i];
+            }    
+        }   
+        System.out.printf("La suma de los numeros pares es = "+ numeroPar +"\n"+
+"La suma de los numeros impares es = "+numeroImpar);   
 }
+
+
+
+
+
+
+}
+
