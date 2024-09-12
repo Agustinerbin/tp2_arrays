@@ -14,7 +14,7 @@ public class Main {
             System.out.println("4.");
             System.out.println("5.");
             System.out.println("6.Generar un array con numeros aleatorios y mostrarlo(for)");
-            System.out.println("7.");
+            System.out.println("7.Suma de numero pares e impares");
             System.out.println("8.");
             System.out.println("9.");
             System.out.println("10.Mostrar el dni con la letra correspondiente(metodo,Scaner)");
