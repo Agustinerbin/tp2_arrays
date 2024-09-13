@@ -164,7 +164,28 @@ public class Main {
 "La suma de los numeros impares es = "+numeroImpar);   
 }
 
+public static void ejercicio11(Scanner scanner){
+    int array5[]= new int[5],
+    int array10[]= new int[10],
+    int array[]= new int[5],
+for (i=0;i<array5.length;i++){
+    System.out.print("Ingrese los numeros del primer array: ")
+    array5[i]= scanner.nextInt(),
+}
+for (i=0;i<array10.length;i++){
+    System.out.print("Ingrese los numeros del segundo array: ")
+    array10[i]= scanner.nextInt(),
+}
+for (i=0;i<array.length;i++){
+    array[i]= for (i=0;)
 
+
+}
+
+
+
+
+}
 
 
 
