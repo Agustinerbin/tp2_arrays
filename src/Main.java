@@ -11,24 +11,22 @@ public class Main {
             System.out.println("1.");
             System.out.println("2.Mostrar el array por pantalla(for)");
             System.out.println("3.Mostrar numero y sus multiplos");
-            System.out.println("4.");
+            System.out.println("4.Mayor y menor de un arreglo");
             System.out.println("5.");
             System.out.println("6.Generar un array con numeros aleatorios y mostrarlo(for)");
             System.out.println("7.Suma de numero pares e impares");
-            System.out.println("8.");
+            System.out.println("8.Mostrar en forma ascendente y descendente");
             System.out.println("9.");
             System.out.println("10.Mostrar el dni con la letra correspondiente(metodo,Scaner)");
-            System.out.println("11.");
-            System.out.println("12.");
-            System.out.println("13.");
-            System.out.println("14.");
+            System.out.println("11.Sumatoria de arreglos");
+            System.out.println("12.Cambiar elemento de un array");
             System.out.println("0. Salir");
             System.out.println("0pción: ");
             option = scanner.nextInt();
 
             switch (option) {
 //                case 1:
-//                    ejercicio1();
+//                    1();
 //                    break;
                 case 2:
                     ejercicio2();
@@ -57,9 +55,9 @@ public class Main {
                 case 10:
                     ejercicio10(scanner);
                     break;
-//                case 11:
-//                    ejercicio11();
-//                    break;
+                case 11:
+                    ejercicio11(scanner);
+                    break;
                 case 12:
                     ejercicio12(scanner);
                     break;
@@ -87,7 +85,6 @@ public class Main {
 
     public static void ejercicio4(Scanner scanner) {
         double[] numeros = new double[20];
-        int arreglo[] = new int[20];
         int contador = 0;
 
         while (contador < 20) {
@@ -289,14 +286,30 @@ for (int i=0;i<array10.length;i++){
     System.out.print("Ingrese los numeros del segundo array: ");
     array10[i]= scanner.nextInt();
 }
-//for (int i=0;i<array.length;i++){
-//    array[i]= for (i=0;);
-//
-//
-//}
+    // Calculamos los valores del tercer array
+    for (int i = 0; i < 5; i++) {
+        int suma = 0;
+        for (int j = 0; j < 10; j++) {
+            suma += array5[i] * array10[j];
+        }
+        array[i] = suma;
+    }
 
+    // Mostramos los 3 arrays
+    System.out.println("\nArray 1:");
+    for (int i = 0; i < 5; i++) {
+        System.out.print(array5[i] + " ");
+    }
 
+    System.out.println("\nArray 2:");
+    for (int i = 0; i < 10; i++) {
+        System.out.print(array10[i] + " ");
+    }
 
+    System.out.println("\nArray 3 :");
+    for (int i = 0; i < 5; i++) {
+        System.out.print(array[i] + " ");
+    }
 
 }
 
