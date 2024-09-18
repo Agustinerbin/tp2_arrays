@@ -8,15 +8,15 @@ public class Main {
 
         do {
             System.out.println("Seleccione el ejercicio que desea ejecutar");
-            System.out.println("1.");
+            System.out.println("1.¿Qué sucede si tratamos de acceder un elemento fuera del tamaño del array?");
             System.out.println("2.Mostrar el array por pantalla(for)");
             System.out.println("3.Mostrar numero y sus multiplos");
             System.out.println("4.Mayor y menor de un arreglo");
-            System.out.println("5.");
+            System.out.println("5.calcular los numeros mayores, menores e iguales al la media de un array(Random)");
             System.out.println("6.Generar un array con numeros aleatorios y mostrarlo(for)");
             System.out.println("7.Suma de numero pares e impares");
             System.out.println("8.Mostrar en forma ascendente y descendente");
-            System.out.println("9.");
+            System.out.println("9.Solicitar al usuario el ingreso de una cadena de números (metodo Split)");
             System.out.println("10.Mostrar el dni con la letra correspondiente(metodo,Scaner)");
             System.out.println("11.Sumatoria de arreglos");
             System.out.println("12.Cambiar elemento de un array");
@@ -25,9 +25,9 @@ public class Main {
             option = scanner.nextInt();
 
             switch (option) {
-//                case 1:
-//                    1();
-//                    break;
+                case 1:
+                    ejercicio1();
+                    break;
                 case 2:
                     ejercicio2();
                     break;
@@ -37,9 +37,9 @@ public class Main {
                 case 4:
                     ejercicio4(scanner);
                     break;
-//                case 5:
-//                    ejercicio5();
-//                    break;
+                case 5:
+                    ejercicio5();
+                    break;
                 case 6:
                     ejercicio6();
                     break;
@@ -49,9 +49,9 @@ public class Main {
                 case 8:
                     ejercicio8(scanner);
                     break;
-//                case 9:
-//                    ejercicio9();
-//                    break;
+                case 9:
+                    ejercicio9();
+                    break;
                 case 10:
                     ejercicio10(scanner);
                     break;
@@ -73,6 +73,16 @@ public class Main {
         } while (option != 0);
 
         scanner.close();
+    }
+
+    public static void ejercicio1() {
+        final String ANSI_RED = "\u001B[31m";
+        final String ANSI_RESET = "\u001B[0m";
+        //comienzo ejercicio 1 (Pregunta ¿Qué sucede si tratamos de acceder un elemento fuera del tamaño del array? )
+        System.out.println("¿Qué sucede si tratamos de acceder un elemento fuera del tamaño del array?\n  ");
+        System.out.println("•Al intentar utilizar un elemento fuera del rango del array ,asi sea una posicion anterior o posterior,\n nos saldrá el siguiente error:");
+        System.out.println(ANSI_RED + "  ArrayIndexOutOfBoundsException" + ANSI_RESET);
+        //termina el ejercicio 1
     }
 
     public static void ejercicio2() {
@@ -127,7 +137,40 @@ public class Main {
 
     }
 
+    public static void ejercicio5() {
+        Random random = new Random();
+        int numeros1[] = new int[20];
 
+        for (int i = 0; i < numeros1.length; i++) {
+            numeros1[i] = random.nextInt(100);
+            System.out.println("Los numeros son: \n" + numeros1[i]);
+        }
+        //proceso para calcular la media
+        int suma = 0;
+        for (int posicion : numeros1) {
+            suma += posicion;
+        }
+        double media = (double) suma / numeros1.length;
+
+        int igualesALaMedia = 0;
+        int menoresALaMedia = 0;
+        int mayoresALaMedia = 0;
+
+        for (int num : numeros1) {
+            if (num == media) {
+                igualesALaMedia++;
+            } else if (num > media) {
+                mayoresALaMedia++;
+            } else if (num < media) {
+                menoresALaMedia++;
+            }
+        }
+        //mensaje en consola
+
+        System.out.println("Tiene " + igualesALaMedia + " numeros iguales a la media");
+        System.out.println("Tiene " + menoresALaMedia + " numeros menores a la media");
+        System.out.println("Tiene " + mayoresALaMedia + " numeros mayores a la media");
+    }
 
     public static void ejercicio6() {
         int array[] = new int[50];
@@ -202,7 +245,24 @@ public class Main {
         System.out.println();
     }
 
+    public static void ejercicio9() {
+        Scanner ej9 = new Scanner(System.in);
+        System.out.println("Ingrese una lista de numeros separando con - (guiones)");
+        String valoresIngresados = ej9.nextLine ();
+        int valorTotal = 0;
 
+        //paso de string a array
+        String [] valoresArray = valoresIngresados.split("-");
+        for (String sumaValores : valoresArray)
+        {
+            valorTotal += Integer.parseInt(sumaValores.trim());
+        }
+        double valorPromedio = (double) valorTotal / valoresArray.length;
+
+        //mensaje por consola
+        System.out.println("El valor total es: " + valorTotal);
+        System.out.println("El valor promedio es: " + valorPromedio);
+    }
 
     public static void ejercicio10(Scanner scanner) {
         System.out.println("Ingrese el numero del dni: ");
